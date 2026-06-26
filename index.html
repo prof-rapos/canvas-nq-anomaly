@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Canvas NQ — Session Anomaly Detector</title>
+<title>Canvas Quiz Anomaly Detector</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; }
 
@@ -97,9 +97,9 @@
 <body>
 
 <header>
-  <div class="eyebrow">Ontario Tech University · Canvas New Quizzes</div>
+  <div class="eyebrow">Canvas New Quizzes</div>
   <h1>Session Anomaly Detector</h1>
-  <p>Flags rapid-answer bursts and unusual inactivity gaps in student quiz session logs to support academic integrity review.</p>
+  <p>Identifies and flags multiple sessions, rapid answers, and long pauses in quizzes, with logs available to review.</p>
 </header>
 
 <div class="container">
@@ -112,7 +112,7 @@
       <li>
         <div class="text">
           <strong>Download and extract the extension</strong>
-          <span>Click the button below to download the zip file. Extract it anywhere on your computer — your Desktop is fine.</span>
+          <span>Click the button below to download the zip file. Extract it somewhere safe on your computer.</span>
           <br>
           <a class="download-btn" href="canvas-nq-anomaly.zip" download>⬇ Download Extension (.zip)</a>
         </div>
@@ -120,7 +120,7 @@
       <li>
         <div class="text">
           <strong>Open Chrome's extension manager</strong>
-          <span>In a new Chrome tab, type <code data-copy="chrome://extensions">chrome://extensions</code> in the address bar and press Enter.</span>
+          <span>In a new Chrome tab, type <code data-copy="chrome://extensions">chrome://extensions</code> (or click to copy then paste) in the address bar and press Enter.</span>
         </div>
       </li>
       <li>
@@ -172,13 +172,13 @@
         <div class="text">
           <strong>Set the sensitivity and run</strong>
           <span>A window appears asking how many questions answered within 30 seconds should be flagged. Drag the slider to your preferred sensitivity, then click <strong>▶ Run Analysis</strong>.</span>
-          <div class="tip">For a 2-hour exam, a slider value of 4–5 works well. For a shorter, faster-paced quiz you may want to increase it to 6–7.</div>
+          <div class="tip">The lower the value, the more likely you are to flag large amounts of students.</div>
         </div>
       </li>
       <li>
         <div class="text">
           <strong>Wait for the report</strong>
-          <span>The tool fetches each student's session log in the background (30–60 seconds for a large class). A printable report opens automatically when complete.</span>
+          <span>The tool fetches each student's session log in the background (30–60 seconds for a large class). A report opens automatically when complete, where you can view individual logs, or export all flagged logs.</span>
         </div>
       </li>
     </ol>
@@ -207,7 +207,7 @@
   <div class="card">
     <h2>❓ Questions or Issues</h2>
     <p style="font-size:14px;color:#444;margin:0">
-      Contact <a href="mailto:ericrapos@gmail.com" style="color:#003e6b">Eric Rapos</a> for support or to report a problem.
+      Contact <a href="mailto:eric.rapos@ontariotechu.ca" style="color:#003e6b">Eric Rapos</a> for support or to report a problem.
     </p>
   </div>
 
