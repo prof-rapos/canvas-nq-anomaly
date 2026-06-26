@@ -67,6 +67,21 @@
     background: #eef1f5; padding: 2px 7px; border-radius: 3px;
     font-size: 12px; font-family: 'Consolas', 'Courier New', monospace; color: #003e6b;
   }
+  code[data-copy] {
+    cursor: pointer; border-bottom: 1px dashed #003e6b;
+    position: relative;
+  }
+  code[data-copy]:hover { background: #dce8f5; }
+  code[data-copy]::after {
+    content: ' 📋'; font-size: 10px; opacity: .5;
+  }
+  .copied-tip {
+    position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+    background: #003e6b; color: #fff; padding: 8px 18px; border-radius: 20px;
+    font-size: 13px; pointer-events: none; opacity: 0;
+    transition: opacity .2s; z-index: 9999;
+  }
+  .copied-tip.show { opacity: 1; }
 
   .badge {
     display: inline-block; padding: 2px 10px; border-radius: 20px;
@@ -104,7 +119,7 @@
       <li>
         <div class="text">
           <strong>Open Chrome's extension manager</strong>
-          <span>In a new Chrome tab, type <code>chrome://extensions</code> in the address bar and press Enter.</span>
+          <span>In a new Chrome tab, type <code data-copy="chrome://extensions">chrome://extensions</code> in the address bar and press Enter.</span>
         </div>
       </li>
       <li>
@@ -181,7 +196,7 @@
       <li>
         <div class="text">
           <strong>Reload the extension</strong>
-          <span>Go to <code>chrome://extensions</code>, find the extension, and click the <strong>↻</strong> reload icon. That's it.</span>
+          <span>Go to <code data-copy="chrome://extensions">chrome://extensions</code>, find the extension, and click the <strong>↻</strong> reload icon. That's it.</span>
         </div>
       </li>
     </ol>
@@ -198,6 +213,22 @@
 </div>
 
 <footer>Canvas NQ — Session Anomaly Detector · Ontario Tech University</footer>
+
+<div class="copied-tip" id="copiedTip">Copied — paste in your address bar</div>
+
+<script>
+  var tip = document.getElementById('copiedTip');
+  var tipTimer;
+  document.querySelectorAll('code[data-copy]').forEach(function(el) {
+    el.addEventListener('click', function() {
+      navigator.clipboard.writeText(el.dataset.copy).then(function() {
+        clearTimeout(tipTimer);
+        tip.classList.add('show');
+        tipTimer = setTimeout(function() { tip.classList.remove('show'); }, 2000);
+      });
+    });
+  });
+</script>
 
 </body>
 </html>
