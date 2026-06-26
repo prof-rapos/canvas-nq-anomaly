@@ -13,12 +13,11 @@
   }
 
   header {
-    background: #003e6b; color: #fff; padding: 40px 24px 36px;
-    text-align: center;
+    background: #003e6b; color: #fff; padding: 40px 24px 36px; text-align: center;
   }
   header .eyebrow { font-size: 12px; opacity: .65; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 8px; }
   header h1 { margin: 0 0 10px; font-size: 28px; font-weight: 700; }
-  header p  { margin: 0; opacity: .8; font-size: 15px; max-width: 560px; margin: 0 auto; }
+  header p  { margin: 0 auto; opacity: .8; font-size: 15px; max-width: 560px; }
 
   .container { max-width: 780px; margin: 0 auto; padding: 40px 24px; }
 
@@ -33,40 +32,34 @@
 
   .steps { list-style: none; margin: 0; padding: 0; counter-reset: step; }
   .steps li {
-    counter-increment: step;
-    display: flex; gap: 16px; align-items: flex-start;
+    counter-increment: step; display: flex; gap: 16px; align-items: flex-start;
     padding: 14px 0; border-bottom: 1px solid #f0f2f5;
   }
   .steps li:last-child { border-bottom: none; padding-bottom: 0; }
   .steps li::before {
-    content: counter(step);
-    min-width: 32px; height: 32px; border-radius: 50%;
-    background: #003e6b; color: #fff;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 13px; font-weight: 700; flex-shrink: 0; margin-top: 1px;
+    content: counter(step); min-width: 32px; height: 32px; border-radius: 50%;
+    background: #003e6b; color: #fff; display: flex; align-items: center;
+    justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; margin-top: 1px;
   }
   .steps li .text { flex: 1; }
   .steps li .text strong { display: block; margin-bottom: 3px; font-size: 14px; }
   .steps li .text span { font-size: 13px; color: #555; }
 
   .note {
-    background: #eef4fb; border-left: 4px solid #003e6b;
-    border-radius: 4px; padding: 12px 16px; margin-top: 12px;
-    font-size: 13px; color: #003e6b;
+    background: #eef4fb; border-left: 4px solid #003e6b; border-radius: 4px;
+    padding: 12px 16px; margin-top: 12px; font-size: 13px; color: #003e6b;
   }
   .note strong { display: block; margin-bottom: 2px; }
 
   .tip {
-    background: #fff8e1; border-left: 4px solid #f0b429;
-    border-radius: 4px; padding: 12px 16px; margin-top: 12px;
-    font-size: 13px; color: #7a5c00;
+    background: #fff8e1; border-left: 4px solid #f0b429; border-radius: 4px;
+    padding: 12px 16px; margin-top: 12px; font-size: 13px; color: #7a5c00;
   }
 
   .download-btn {
-    display: inline-block; margin-top: 16px;
-    padding: 11px 28px; background: #003e6b; color: #fff;
-    border-radius: 6px; text-decoration: none; font-weight: 600;
-    font-size: 14px; transition: background .15s;
+    display: inline-block; margin-top: 16px; padding: 11px 28px;
+    background: #003e6b; color: #fff; border-radius: 6px; text-decoration: none;
+    font-weight: 600; font-size: 14px; transition: background .15s;
   }
   .download-btn:hover { background: #005a9c; }
 
@@ -77,8 +70,7 @@
 
   .badge {
     display: inline-block; padding: 2px 10px; border-radius: 20px;
-    font-size: 11px; font-weight: 700; letter-spacing: .04em;
-    text-transform: uppercase;
+    font-size: 11px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
   }
   .badge-once  { background: #d4edda; color: #155724; }
   .badge-every { background: #e8eef4; color: #003e6b; }
@@ -103,10 +95,10 @@
     <ol class="steps">
       <li>
         <div class="text">
-          <strong>Download the extension file</strong>
-          <span>Click the button below to download <code>canvas-nq-anomaly.crx</code> to your computer.</span>
+          <strong>Download and extract the extension</strong>
+          <span>Click the button below to download the zip file. Extract it anywhere on your computer — your Desktop is fine.</span>
           <br>
-          <a class="download-btn" href="canvas-nq-anomaly.crx" download>⬇ Download Extension</a>
+          <a class="download-btn" href="canvas-nq-anomaly.zip" download>⬇ Download Extension (.zip)</a>
         </div>
       </li>
       <li>
@@ -119,19 +111,19 @@
         <div class="text">
           <strong>Enable Developer mode</strong>
           <span>Find the <strong>Developer mode</strong> toggle in the top-right corner of the page and switch it <strong>on</strong>.</span>
-          <div class="note"><strong>Why is this needed?</strong> Chrome requires this one-time step to install extensions from outside the Chrome Web Store. You can turn it off again after installing if you prefer.</div>
+          <div class="note"><strong>Why is this needed?</strong> Chrome requires this one-time step to install extensions from outside the Chrome Web Store. You can leave it on — it doesn't affect anything else.</div>
         </div>
       </li>
       <li>
         <div class="text">
-          <strong>Drag the file into Chrome</strong>
-          <span>Drag the downloaded <code>canvas-nq-anomaly.crx</code> file from your Downloads folder into the <code>chrome://extensions</code> tab. A prompt will appear — click <strong>Add extension</strong>.</span>
+          <strong>Click "Load unpacked"</strong>
+          <span>A button labelled <strong>Load unpacked</strong> will appear at the top-left. Click it, then navigate to and select the <code>canvas-nq-anomaly</code> folder you extracted in step 1.</span>
         </div>
       </li>
       <li>
         <div class="text">
           <strong>Done!</strong>
-          <span>The magnifying glass icon (<strong>🔍</strong>) will appear in your Chrome toolbar. If you don't see it, click the puzzle-piece icon (🧩) to find and pin it.</span>
+          <span>The extension icon appears in your Chrome toolbar. If you don't see it, click the puzzle-piece 🧩 icon to find and pin it.</span>
         </div>
       </li>
     </ol>
@@ -157,20 +149,20 @@
       <li>
         <div class="text">
           <strong>Click the extension icon</strong>
-          <span>Click the <strong>🔍</strong> icon in the Chrome toolbar. A small popup appears with a <strong>Run Anomaly Check</strong> button.</span>
+          <span>Click the extension icon in the Chrome toolbar. A small popup appears — click <strong>Run Anomaly Check</strong>.</span>
         </div>
       </li>
       <li>
         <div class="text">
-          <strong>Review the settings and run</strong>
-          <span>A configuration window appears. The defaults work well for most exams — adjust the thresholds if needed, then click <strong>▶ Run Analysis</strong>.</span>
-          <div class="tip">For a 2-hour exam you may want to increase the <em>Gap threshold</em> to 15–20 minutes to avoid flagging normal thinking pauses.</div>
+          <strong>Set the sensitivity and run</strong>
+          <span>A window appears asking how many questions answered within 30 seconds should be flagged. Drag the slider to your preferred sensitivity, then click <strong>▶ Run Analysis</strong>.</span>
+          <div class="tip">For a 2-hour exam, a slider value of 4–5 works well. For a shorter, faster-paced quiz you may want to increase it to 6–7.</div>
         </div>
       </li>
       <li>
         <div class="text">
           <strong>Wait for the report</strong>
-          <span>The tool fetches each student's session log in the background (this can take 30–60 seconds for a large class). A printable report opens automatically when complete.</span>
+          <span>The tool fetches each student's session log in the background (30–60 seconds for a large class). A printable report opens automatically when complete.</span>
         </div>
       </li>
     </ol>
@@ -178,10 +170,21 @@
 
   <!-- Updates -->
   <div class="card">
-    <h2>🔄 Updates</h2>
-    <p style="font-size:14px;color:#444;margin:0">
-      The extension updates itself automatically. When a new version is released, Chrome will install it in the background — you don't need to do anything.
-    </p>
+    <h2>🔄 Updating to a New Version</h2>
+    <ol class="steps">
+      <li>
+        <div class="text">
+          <strong>Download and extract the new zip</strong>
+          <span>Download the latest version above and extract it, replacing the old <code>canvas-nq-anomaly</code> folder.</span>
+        </div>
+      </li>
+      <li>
+        <div class="text">
+          <strong>Reload the extension</strong>
+          <span>Go to <code>chrome://extensions</code>, find the extension, and click the <strong>↻</strong> reload icon. That's it.</span>
+        </div>
+      </li>
+    </ol>
   </div>
 
   <!-- Support -->
